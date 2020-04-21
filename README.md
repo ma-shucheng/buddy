@@ -1,1 +1,1 @@
-# buddy
+# buddy安装包
