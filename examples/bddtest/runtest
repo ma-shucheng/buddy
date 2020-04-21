@@ -1,0 +1,7 @@
+#!/bin/sh -f
+
+cd $(dirname $0)
+
+./bddtest > result
+
+if cmp -s expected result; then rm result; else exit $?; fi

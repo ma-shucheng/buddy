@@ -1,0 +1,7 @@
+#!/bin/sh -f
+
+cd $(dirname $0)
+
+./bddsupportbug | egrep -v '^Garbage collection' > result
+
+if cmp -s expected result; then rm result; else exit $?; fi

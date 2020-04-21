@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd $(dirname $0)
+
+./money | egrep -v '^Garbage collection' >> result
+
+if cmp -s expected result; then rm result; else exit $?; fi
